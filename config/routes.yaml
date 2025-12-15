@@ -9,3 +9,15 @@
 
 controllers:
     resource: routing.controllers
+
+conference_home:
+  path: /
+  controller: App\Controller\ConferenceController::hello
+  
+conference_bye:
+  path: /info
+  controller: App\Controller\ConferenceController::bye
+  
+
+  
+  
