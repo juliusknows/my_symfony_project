@@ -7,17 +7,20 @@
 # To list all registered routes, run the following command:
 #   bin/console debug:router
 
-controllers:
-    resource: routing.controllers
+#requirements: определяет требования к параметрам маршрута с помощью: констант регулярных выражений, параметров конфигураций?
+# если в маршруте есть переменная /blog/{...} ее он и будет проверять на соответствие. Требования могут быть встроены в параметр
+# но это может нарушить читаемость если они длинные. /blog/{page<\d+>}
 
-conference_home:
+#condition: значение параметра может являтся выражением, в том числе может использовать синтаксис Symfony.
+# помогает сделать логическую проверку на соответствие маршрута заданным параметрам.
+
+#defaults: может задать сзначение по умолчанию для переменной /blog/{page}
+
+
+homepage:
   path: /
-  controller: App\Controller\ConferenceController::hello
-  
-conference_bye:
-  path: /info
-  controller: App\Controller\ConferenceController::bye
-  
+  controller: App\Controller\ConferenceController::index
+  requirements:
+  defaults:
+  methods: 
 
-  
-  
