@@ -17,10 +17,7 @@
 #defaults: может задать сзначение по умолчанию для переменной /blog/{page}
 
 
-homepage:
-  path: /
-  controller: App\Controller\ConferenceController::index
-  requirements:
-  defaults:
-  methods: 
+controllers:
+    resource: ../src/Controller/
+    type:     attribute
 
