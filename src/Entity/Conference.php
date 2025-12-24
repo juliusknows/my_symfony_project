@@ -25,9 +25,9 @@ class Conference
     private ?bool $isInternational = null;
 
     /**
-     * @var Collection<int, comment>
+     * @var Collection<int, Comment>
      */
-    #[ORM\OneToMany(targetEntity: comment::class, mappedBy: 'conference', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
     private Collection $comments;
 
     public function __construct()
@@ -38,6 +38,11 @@ class Conference
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function __toString(): string
+    {
+    return $this->city.' '.$this->year;
     }
 
     public function getCity(): ?string
