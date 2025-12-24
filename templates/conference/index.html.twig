@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Conference Guestbook{% endblock %}
+
 {% block body %}
-<html>
-    <body>
-        <img src="/images/under-construction.gif" />
-    </body>
-</html>
+    <h2>Give your feedback!</h2>
+
+    {% for conference in conferences %}
+        <h4>{{ conference }}</h4>
+    {% endfor %}
 {% endblock %}
